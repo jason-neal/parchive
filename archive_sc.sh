@@ -1,6 +1,6 @@
 #/usr/bin/env sh
 
-TODAY=$(date -d "today" +"%Y%d%m")
+TODAY=$(date -d "today" +"%Y%m%d")
 # Requires SWEETer-Cat repo next to parchive repo
 cd ../SWEETer-Cat
 
