@@ -17,11 +17,13 @@ git pull
 # Update ExoplanetEU file
 python updateDB.py -n  # Update now
 
-# Copy files to archive
-cp sweetercat/data/exoplanetEU.csv ../parchive/data/exoEU_$TODAY.csv
-cp sweetercat/data/sweet-cat.tsv ../parchive/data/sc_$TODAY.tsv
-
+# Return to parchive directory
 cd ..
+
+# Copy files to archive
+cp $SC_DIR/sweetercat/data/exoplanetEU.csv ./data/exoEU_$TODAY.csv
+cp $SC_DIR/sweetercat/data/sweet-cat.tsv ./data/sc_$TODAY.tsv
+
 
 # Clear any other staged files
 git reset HEAD
