@@ -8,17 +8,15 @@ SC_DIR=".Sweeter-Cat"
 if [ ! -d "$SC_DIR" ]; then
    git clone https://github.com/DanielAndreasen/SWEETer-Cat.git "$SC_DIR"
 fi 
- 
-cd "$SC_DIR"
 
-# Update SWEETer-Cat repo
-git pull
 
-# Update ExoplanetEU file
-python updateDB.py -n  # Update now
-
-# Return to parchive directory
-cd ..
+(   # Using a subshell
+    cd "$SC_DIR" || exit
+    # Update SWEETer-Cat repo
+    git pull
+    # Update ExoplanetEU file
+    python updateDB.py -n  # Update now
+)   # No need for "cd .."
 
 # Copy files to archive
 cp $SC_DIR/sweetercat/data/exoplanetEU.csv ./data/exoEU_$TODAY.csv
