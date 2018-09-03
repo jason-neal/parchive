@@ -29,6 +29,7 @@ git reset HEAD
 # Commit the files
 git add data/exoEU_$TODAY.csv data/sc_$TODAY.tsv
 git commit -m "Archive $TODAY"
+git tag $TODAY
 
 # Push to repository
 git push
