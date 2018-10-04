@@ -34,3 +34,8 @@ git tag $TODAY
 # Push to repository
 git push
 
+(   # Using a subshell
+    cd "$SC_DIR" || exit
+    # Restore exoplanetEU.csv to match SC repo version.
+    git checkout -- sweetercat/data/exoplanetEU.csv
+)   
